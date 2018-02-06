@@ -2,7 +2,11 @@
 # PURPOSE: Bootstrap Aggregated ensemble modeling, where 
 # the output includes Out of Bag (OOB) sample performance. 
 # Flexible split criteria, either Gini, Information, or 
-# both. 
+# both. If "both" is selected, half the trees are constructed
+# with Gini and half with Information Criteria, taking turns.
+# This script was designed instead of the already-available 
+# R bagging functions in order to give better information on 
+# OOB performance. 
 
 bagging <- function(y_name
                     ,training_df
